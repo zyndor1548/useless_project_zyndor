@@ -43,8 +43,14 @@ flow chart
 
 ### Project Demo
 # Video
-<video controls src="vedio/cat_test.mp4" title="testing with cat sound"></video>
-<video controls src="vedio/dog_test.mp4" title="testing with dog sound"></video>
+
+https://github.com/user-attachments/assets/e2c7af83-ecc9-4db5-8600-dbdb8c0534ad
+
+
+
+https://github.com/user-attachments/assets/e305dc8f-87a0-4fdd-9aa4-77fa8f74cee1
+
+
 
 # Additional Demos
 - link to website 
