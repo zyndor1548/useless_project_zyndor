@@ -1,3 +1,36 @@
+import { Client } from "https://esm.sh/@gradio/client";
+
+async function classifyAudio(file) {
+    try {
+        const client = await Client.connect("ardneebwar/animals-sounds-classifier");
+        const result = await client.predict("/predict", { filepath: file });
+
+
+        let label = null;
+        if (result.data && result.data.label) {
+            label = result.data.label;
+        } else if (Array.isArray(result.data) && result.data[0]?.label) {
+            label = result.data[0].label;
+        }
+
+        if (label) {
+            console.log(label)
+
+    
+            const response = await fetch('text.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `animal=${encodeURIComponent(label)}`
+            });
+            const text = await response.text();
+            console.log(text);
+        } else {
+            console.log(result.data);
+        }
+    } catch (err) {
+        console.error("Error:", err.message);
+    }
+}
 document.getElementById('record_audio').addEventListener('click', async function () {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     const mediaRecorder = new MediaRecorder(stream);
@@ -9,75 +42,19 @@ document.getElementById('record_audio').addEventListener('click', async function
 
     mediaRecorder.onstop = async () => {
         const blob = new Blob(recordedChunks, { type: 'audio/wav' });
-
-        let audioPlayer = document.getElementById('audio_player');
-        if (!audioPlayer) {
-            audioPlayer = document.createElement('audio');
-            audioPlayer.id = 'audio_player';
-            audioPlayer.controls = true;
-            document.body.appendChild(audioPlayer);
-        }
-        audioPlayer.src = URL.createObjectURL(blob);
-
-        const formData = new FormData();
-        formData.append('audio', blob, 'recorded.wav');
-
-        document.getElementById("status").textContent = 'Uploading...';
-
-        try {
-            const response = await fetch('./sound.php', {
-                method: 'POST',
-                body: formData
-            });
-            const result = await response.json();
-            if (result.error) {
-                document.getElementById("status").textContent = `Error: ${result.error}`;
-            } else {
-                document.getElementById("status").textContent = `Label: ${result.label}, Time: ${result.time}`;
-            }
-        } catch (e) {
-            document.getElementById("status").textContent = `Error: ${e.message}`;
-        }
+        await classifyAudio(blob);
     };
 
     mediaRecorder.start();
-    setTimeout(() => mediaRecorder.stop(), 5000); // Record for 5 seconds
+    setTimeout(() => mediaRecorder.stop(), 5000)
 });
 
 document.getElementById('upload_debug_audio').addEventListener('click', async function () {
     const fileInput = document.getElementById('debug_audio');
     const file = fileInput.files[0];
     if (!file) {
-        document.getElementById("status").textContent = 'No file selected.';
+        console.log('No file selected.');
         return;
     }
-
-    let audioPlayer = document.getElementById('audio_player');
-    if (!audioPlayer) {
-        audioPlayer = document.createElement('audio');
-        audioPlayer.id = 'audio_player';
-        audioPlayer.controls = true;
-        document.body.appendChild(audioPlayer);
-    }
-    audioPlayer.src = URL.createObjectURL(file);
-
-    const formData = new FormData();
-    formData.append('audio', file, file.name);
-
-    document.getElementById("status").textContent = 'Uploading debug audio...';
-
-    try {
-        const response = await fetch('./sound.php', {
-            method: 'POST',
-            body: formData
-        });
-        const result = await response.json();
-        if (result.error) {
-            document.getElementById("status").textContent = `Error: ${result.error}`;
-        } else {
-            document.getElementById("status").textContent = `Label: ${result.label}, Time: ${result.time}`;
-        }
-    } catch (e) {
-        document.getElementById("status").textContent = `Error: ${e.message}`;
-    }
+    await classifyAudio(file);
 });
