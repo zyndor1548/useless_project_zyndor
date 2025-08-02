@@ -28,53 +28,28 @@ For Software:
 
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add a caption explaining what this shows*
+"./screenshots/screenshot_1.png"
+- shows the main page of the website
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add a caption explaining what this shows*
+"./screenshots/screenshot_2.png"
+- shows the sound recording
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add a caption explaining what this shows*
+"./screenshots/screenshot_3.png"
+- main page 
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add a caption explaining your workflow*
 
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add a caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add a caption explaining the schematic*
-
-# Build Photos
-![Components](Add a photo of your components here)
-*List all components shown*
-
-![Build](Add photos of the build process here)
-*Explain the build steps*
-
-![Final](Add a photo of the final product here)
-*Explain the final build*
 
 ### Project Demo
 # Video
 [Add your demo video link here]
-*Explain what the video demonstrates*
+
 
 # Additional Demos
 [Add any extra demo materials/links]
 
-## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
-
 ---
-Made with ❤️ at TinkerHub Useless Projects 
+Made with ❤️ at TinkerHub Useless Projects by zyndor
 
 ![Static Badge](https://img.shields.io/badge/TinkerHub-24?color=%23000000&link=https%3A%2F%2Fwww.tinkerhub.org%2F)
 ![Static Badge](https://img.shields.io/badge/UselessProjects--25-25?link=https%3A%2F%2Fwww.tinkerhub.org%2Fevents%2FQ2Q1TQKX6Q%2FUseless%2520Projects)
