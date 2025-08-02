@@ -7,8 +7,8 @@
 ### Team Name: Three
 
 ### Team Members
-- Team Lead: Aromal A S - [College of Engineering]
-- Member 2: Nandhu B M - [College of Engineering]
+- Team Lead: Aromal A S - [College of Engineering Attingal]
+- Member 2: Nandhu B M - [College of Engineering Attingal]
 
 ### Project Description
 Zwitter is a social media-inspired web UI designed for animals.
