@@ -56,7 +56,7 @@ https://github.com/user-attachments/assets/e305dc8f-87a0-4fdd-9aa4-77fa8f74cee1
 - link to website 
 ## https://zwitter.likesyou.org
 ---
-Made with ❤️ at TinkerHub Useless Projects by zyndor
+Made with ❤️ at TinkerHub Useless Projects by zyndor and nandhu
 
 ![Static Badge](https://img.shields.io/badge/TinkerHub-24?color=%23000000&link=https%3A%2F%2Fwww.tinkerhub.org%2F)
 ![Static Badge](https://img.shields.io/badge/UselessProjects--25-25?link=https%3A%2F%2Fwww.tinkerhub.org%2Fevents%2FQ2Q1TQKX6Q%2FUseless%2520Projects)
