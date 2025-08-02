@@ -1,41 +1,52 @@
 body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #f5f8fa;
-        background-image: url("./asset/images/background.png");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-    }
-    .feed-container {
-        max-width: 500px;
-        margin: 0 auto;
-        padding-top: 30px;
-        height: 100vh;
-        overflow-y: auto;
-    }
-    .message {
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        margin-bottom: 16px;
-        padding: 16px;
-    }
-    .username {
-        font-weight: bold;
-        color: #aceeba;
-        margin-bottom: 8px;
-    }
-    .tweet-btn {
-        position: fixed;
-        left: 20px;
-        bottom: 20px;
-        background: #ACEEBA;
-        color: #fff;
-        border: none;
-        border-radius: 50px;
-        padding: 16px 24px;
-        font-size: 18px;
-        cursor: pointer;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f8fa;
+    background-image: url("./asset/images/background.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.logo {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+.feed-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding-top: 30px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.message {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    margin-bottom: 16px;
+    padding: 16px;
+}
+
+.username {
+    font-weight: bold;
+    color: #aceeba;
+    margin-bottom: 8px;
+}
+
+.tweet-btn {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    background: #ACEEBA;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 16px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
