@@ -49,5 +49,37 @@ $context  = stream_context_create($options);
 $response = file_get_contents($url, false, $context);
 
 $responseData = json_decode($response, true);
-echo $responseData['candidates'][0]['content']['parts'][0]['text'] ?? "No response";
+$text = $responseData['candidates'][0]['content']['parts'][0]['text'] ?? "No response";
+
+$servername = "sql112.byethost7.com";
+$username = "b7_39615818";
+$password = "aromal2006";
+$dbname = "b7_39615818_zwitter";
+
+function generateRandomUsername() {
+    $letters = 'abcdefghijklmnopqrstuvwxyz';
+    $name = '';
+    for ($i = 0; $i < 5; $i++) {
+        $name .= $letters[random_int(0, strlen($letters) - 1)];
+    }
+    for ($i = 0; $i < 3; $i++) {
+        $name .= random_int(0, 9);
+    }
+    return $name;
+}
+
+$username = generateRandomUsername();
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("DB Connection failed: " . $conn->connect_error);
+}
+
+$stmt = $conn->prepare("INSERT INTO tweets(username, messages) VALUES (?, ?)");
+$stmt->bind_param("ss", $username, $text);
+$stmt->execute();
+$stmt->close();
+$conn->close();
+
+echo $text;
 ?>
