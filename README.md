@@ -28,13 +28,13 @@ For Software:
 
 
 # Screenshots (Add at least 3)
-"./screenshots/screenshot_1.png"
+<img src="./screenshots/screenshot_1.png"/>
 - shows the main page of the website
 
-"./screenshots/screenshot_2.png"
+<img src="./screenshots/screenshot_2.png"/>
 - shows the sound recording
 
-"./screenshots/screenshot_3.png"
+<img src="./screenshots/screenshot_3.png"/>
 - main page 
 
 # Diagrams
