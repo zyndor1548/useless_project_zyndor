@@ -66,7 +66,7 @@ $username = "b7_39615818";
 $password = "aromal2006";
 $dbname = "b7_39615818_zwitter";
 
-$user = generateRandomUsername();
+$user = $animal . '-' . generateRandomUsername();
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {

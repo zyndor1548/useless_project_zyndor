@@ -26,7 +26,8 @@
     }
     $conn->close();
     ?>
-    <img src=".asset/images/logo" class="logo" alt="logo">
+    <img src="./asset/images/logo.png" class="logo" alt="logo">
+    <div class="fade" id="fade"> </div>
     <div class="feed-container">
         <?php foreach ($messages as $msg): ?>
             <div class="message">
@@ -36,7 +37,7 @@
         <?php endforeach; ?>
     </div>
     <p id="status"> </p>
-    <button id="record_audio" class="tweet-btn"><img src="./asset/images/mic.png" alt="microphone" ></button>
+    <button id="record_audio" class="tweet-btn"><img  class="mic-icon" src="./asset/images/mic.png" alt="microphone" ></button>
     <script src="script.js" type="module"></script>
 </body>
 </html>

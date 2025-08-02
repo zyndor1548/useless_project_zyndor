@@ -6,21 +6,35 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+/* LOGO */
 .logo {
     width: 100px;
     height: auto;
-    display: block;
     margin: 20px auto;
-}
-.feed-container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding-top: 30px;
-    height: 100vh;
-    overflow-y: auto;
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    z-index: 20;
 }
 
+/* FEED */
+.feed-container {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 140px; /* Enough space for fixed logo */
+    height: 100vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+/* MESSAGE */
 .message {
     background: #fff;
     border-radius: 8px;
@@ -35,18 +49,72 @@ body {
     margin-bottom: 8px;
 }
 
+/* BUTTON */
 .tweet-btn {
     position: fixed;
-    left: 20px;
     bottom: 20px;
+    left: 60px;
     background: #ACEEBA;
     color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     border-radius: 50px;
     padding: 16px 24px;
     font-size: 18px;
     cursor: pointer;
-    height: 100px;
-    width: 100px;
+    width: 200px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.mic-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+.fade {
+    display:none;
+    height: 100vh;
+    width: 100vh;
+    background-color: rgba(22, 22, 22, 0.405);
+}
+/* SMALL SCREEN FIXES */
+@media (max-width: 600px) {
+    body {
+        align-items: center;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .logo {
+        position: flex;
+        align-items: center;
+        margin: 20px auto 0;
+        display: block;
+    }
+
+    .feed-container {
+        max-width: 100vw;
+        padding-top: 20px;
+        height: calc(100vh - 120px);
+        overflow-y: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .tweet-btn {
+        display: flex;
+        align-items: center;
+        transform: translateX(-50%);
+        width: 90vw;
+        max-width: 300px;
+        font-size: 16px;
+        padding: 12px 0;
+    }
+
+    .mic-icon {
+        margin-left: 8px;
+    }
 }
