@@ -1,5 +1,12 @@
 import { Client } from "https://esm.sh/@gradio/client";
 
+async function reloadFeed() {
+    const feed = document.querySelector('.feed-container');
+    const response = await fetch('get_messages.php');
+    const html = await response.text();
+    feed.innerHTML = html;
+}
+
 async function classifyAudio(file) {
     try {
         const client = await Client.connect("ardneebwar/animals-sounds-classifier");
@@ -24,6 +31,8 @@ async function classifyAudio(file) {
             });
             const text = await response.text();
             console.log(text);
+
+            reloadFeed();
         } else {
             console.log(result.data);
         }

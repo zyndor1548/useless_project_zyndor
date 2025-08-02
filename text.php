@@ -16,7 +16,17 @@ $prompt_set = [
     "The \$animal is feeling superior—what’s its smug, witty remark? Respond with only a one-liner.",
     "The \$animal is bored—what’s its dry, funny comment? Respond with only a one-liner."
 ];
-
+function generateRandomUsername() {
+    $letters = 'abcdefghijklmnopqrstuvwxyz';
+    $name = '';
+    for ($i = 0; $i < 5; $i++) {
+        $name .= $letters[random_int(0, strlen($letters) - 1)];
+    }
+    for ($i = 0; $i < 3; $i++) {
+        $name .= random_int(0, 9);
+    }
+    return $name;
+}
 $apiKey = "AIzaSyCQgDNaEcRyheXDhpZwWVor59ybQSJBmkY"; 
 
 $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" . $apiKey;
@@ -56,19 +66,7 @@ $username = "b7_39615818";
 $password = "aromal2006";
 $dbname = "b7_39615818_zwitter";
 
-function generateRandomUsername() {
-    $letters = 'abcdefghijklmnopqrstuvwxyz';
-    $name = '';
-    for ($i = 0; $i < 5; $i++) {
-        $name .= $letters[random_int(0, strlen($letters) - 1)];
-    }
-    for ($i = 0; $i < 3; $i++) {
-        $name .= random_int(0, 9);
-    }
-    return $name;
-}
-
-$username = generateRandomUsername();
+$user = generateRandomUsername();
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
@@ -76,7 +74,7 @@ if ($conn->connect_error) {
 }
 
 $stmt = $conn->prepare("INSERT INTO tweets(username, messages) VALUES (?, ?)");
-$stmt->bind_param("ss", $username, $text);
+$stmt->bind_param("ss", $user, $text);
 $stmt->execute();
 $stmt->close();
 $conn->close();
