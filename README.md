@@ -27,7 +27,7 @@ For Software:
 - https://huggingface.co/spaces/ardneebwar/animals-sounds-classifier
 
 
-# Screenshots (Add at least 3)
+# Screenshots
 <img src="./screenshots/screenshot_1.png"/>
 - shows the main page of the website
 
@@ -38,16 +38,17 @@ For Software:
 - main page 
 
 # Diagrams
-
+<img src="./diagram/diagram.jpeg"/>
+flow chart
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-
+<video controls src="vedio/cat_test.mp4" title="testing with cat sound"></video>
+<video controls src="vedio/dog_test.mp4" title="testing with dog sound"></video>
 
 # Additional Demos
-[Add any extra demo materials/links]
-
+- link to website 
+## https://zwitter.likesyou.org
 ---
 Made with ❤️ at TinkerHub Useless Projects by zyndor
 
