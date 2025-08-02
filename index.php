@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="fade" id="fade"> </div>
     <?php
     $servername = "sql112.byethost7.com";
     $username = "b7_39615818";
@@ -27,7 +28,6 @@
     $conn->close();
     ?>
     <img src="./asset/images/logo.png" class="logo" alt="logo">
-    <div class="fade" id="fade"> </div>
     <div class="feed-container">
         <?php foreach ($messages as $msg): ?>
             <div class="message">

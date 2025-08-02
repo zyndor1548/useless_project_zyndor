@@ -28,7 +28,7 @@ body {
     max-width: 500px;
     width: 100%;
     margin: 0 auto;
-    padding-top: 140px; /* Enough space for fixed logo */
+    padding-top: 140px;
     height: 100vh;
     overflow-y: auto;
     box-sizing: border-box;
@@ -77,10 +77,9 @@ body {
 .fade {
     display:none;
     height: 100vh;
-    width: 100vh;
+    width: 1000vh;
     background-color: rgba(22, 22, 22, 0.405);
 }
-/* SMALL SCREEN FIXES */
 @media (max-width: 600px) {
     body {
         align-items: center;

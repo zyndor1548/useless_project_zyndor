@@ -18,7 +18,9 @@ function showPopup(message) {
     document.body.appendChild(popup);
     document.getElementById("fade").style.display = "block";
 }
-
+function editpopup(message){
+    document.getElementById("mic-popup").innerText = message;
+}
 function hidePopup() {
     const popup = document.getElementById('mic-popup');
     if (popup) popup.remove();
@@ -35,6 +37,7 @@ async function reloadFeed() {
 
 async function classifyAudio(file) {
     try {
+        editpopup("uploading");
         const client = await Client.connect("ardneebwar/animals-sounds-classifier");
         const result = await client.predict("/predict", { filepath: file });
 
